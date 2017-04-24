@@ -1,20 +1,41 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import TypeIcon from './icons/TypeIcon.jsx';
 
 const PersonaResistances = ({ resistances }) => (
-  <Table size="sm" responsive bordered>
+  <Table size="sm" responsive>
     <thead>
       <tr>
-        <th>PHYS</th>
-        <th>GUN</th>
-        <th>FIRE</th>
-        <th>ICE</th>
-        <th>ELEC</th>
-        <th>WIND</th>
-        <th>PSY</th>
-        <th>NUKE</th>
-        <th>BLESS</th>
-        <th>CURSE</th>
+        <th>
+          <TypeIcon type='phys' />
+        </th>
+        <th>
+          <TypeIcon type='gun' />
+        </th>
+        <th>
+          <TypeIcon type='fire' />
+        </th>
+        <th>
+          <TypeIcon type='ice' />
+        </th>
+        <th>
+          <TypeIcon type='elec' />
+        </th>
+        <th>
+          <TypeIcon type='wind' />
+        </th>
+        <th>
+          <TypeIcon type='psy' />
+        </th>
+        <th>
+          <TypeIcon type='nuke' />
+        </th>
+        <th>
+          <TypeIcon type='bless' />
+        </th>
+        <th>
+          <TypeIcon type='curse' />
+        </th>
       </tr>
     </thead>
     <tbody>
