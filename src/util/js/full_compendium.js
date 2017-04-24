@@ -8343,4 +8343,4 @@ const _FULL_COMPENDIUM = {
     }
 }
 
-export default _FULL_COMPENDIUM;
+module.exports = _FULL_COMPENDIUM;
