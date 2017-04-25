@@ -115,13 +115,13 @@ const ResistanceCard = ({ type, value }) => {
   if (icons[value]) {
     height = '70px';
     bottomIcon = (
-      <img style={{ transform: 'rotate(-10deg)', marginLeft: '5%', marginTop: '-100%', width: '120%'}} src={icons[value].icon} />
+      <img style={{ transform: 'rotate(-5deg)', marginLeft: '5%', marginTop: '-100%', width: '120%'}} src={icons[value].icon} />
     )
   }
   return (
-    <div style={{ transform: 'rotate(10deg)', height, marginLeft: '-5px', border: '5px solid #000000', width: '50px', background: '#252525', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+    <div style={{ transform: 'rotate(5deg)', height, marginLeft: '10px', boxShadow: '0px 0px 0px 5px rgba(0,0,0,1)', width: '50px', background: '#252525', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
       <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-        <img style={{ transform: 'rotate(-10deg)', width: '120%', height: '40px',  marginLeft: '-5%', overflow: 'hidden'  }} src={icons[type].icon} />
+        <img style={{ transform: 'rotate(-5deg)', width: '120%', height: '40px',  marginLeft: '-5%', overflow: 'hidden' }} src={icons[type].icon} />
       </div>
       {bottomIcon}
     </div>
