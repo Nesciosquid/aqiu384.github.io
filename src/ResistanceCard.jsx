@@ -1,18 +1,18 @@
-import nukeSvg from './nuke.svg';
-import fireSvg from './fire.svg';
-import elecSvg from './elec.svg';
-import blessSvg from './bless.svg';
-import curseSvg from './curse.svg';
-import iceSvg from './ice.svg';
-import windSvg from './wind.svg';
-import psySvg from './psy.svg';
-import gunSvg from './gun.svg';
-import physSvg from './phys.svg';
-import wkSvg from './Wk.svg';
-import strSvg from './Str.svg';
-import drSvg from './Dr.svg';
-import nullSvg from './Null.svg';
-import rplSvg from './Rpl.svg';
+import nukeSvg from './icons/nuke.svg';
+import fireSvg from './icons/fire.svg';
+import elecSvg from './icons/elec.svg';
+import blessSvg from './icons/bless.svg';
+import curseSvg from './icons/curse.svg';
+import iceSvg from './icons/ice.svg';
+import windSvg from './icons/wind.svg';
+import psySvg from './icons/psy.svg';
+import gunSvg from './icons/gun.svg';
+import physSvg from './icons/phys.svg';
+import wkSvg from './icons/Wk.svg';
+import strSvg from './icons/Str.svg';
+import drSvg from './icons/Dr.svg';
+import nullSvg from './icons/Null.svg';
+import rplSvg from './icons/Rpl.svg';
 import React from 'react';
 import { Tooltip } from 'reactstrap';
 
@@ -45,7 +45,7 @@ class TooltipIcon extends React.Component {
   }
 }
 
-const resistances = {
+const icons = {
   'phys': {
     icon: physSvg,
     text: "Physical",
@@ -108,7 +108,29 @@ const resistances = {
   }
 }
 
-const TypeIcon = ({ type }) => {
+const ResistanceCard = ({ type, value }) => {
+  let height = '40px';
+  let bottomIcon = undefined
+  console.log(value);
+  if (icons[value]) {
+    height = '70px';
+    bottomIcon = (
+      <img style={{ transform: 'rotate(-10deg)', marginLeft: '5%', marginTop: '-100%', width: '120%'}} src={icons[value].icon} />
+    )
+  }
+  return (
+    <div style={{ transform: 'rotate(10deg)', height, marginLeft: '-5px', border: '5px solid #000000', width: '50px', background: '#252525', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+        <img style={{ transform: 'rotate(-10deg)', width: '120%', height: '40px',  marginLeft: '-5%', overflow: 'hidden'  }} src={icons[type].icon} />
+      </div>
+      {bottomIcon}
+    </div>
+  )
+}
+
+/*
+
+const ResistanceCard = ({ type, value }) => {
   const resist = resistances[type];
   if (resist) {
     return <TooltipIcon icon={resist.icon} tipText={resist.text} />;
@@ -116,5 +138,6 @@ const TypeIcon = ({ type }) => {
     return <div>{type}</div>;
   }
 }
+*/
 
-export default TypeIcon;
+export default ResistanceCard;
